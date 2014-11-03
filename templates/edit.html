@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div id="page-wrap">
+<form method="post">
+	<label>
+		<div id="pagetitle">{{title}}</div>
+		<br>
+		<br>
+
+		<textarea name ="content">{{content}}</textarea>
+	</label>
+
+		<div id="error" class="error">{{error}}</div>
+		<br>
+		<input type="submit" value="Done!">
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="page-wrap">
+<form method="post">
+
+<h2><b>Signup</b></h2>
+<br>
+<form method="post">
+<label>
+Username&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="rounded" type="text" name="username" value="{{username}}"><div id ="error">{{uerror}}</div>
+</label>
+<br>
+<label>
+Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="rounded" type="password" name="password" value=""><div id ="error">{{perror}}</div>
+</label>
+<br>
+<label>
+Verify Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="rounded" type="password" name="verify" value=""><div id="error">{{verror}}</div>
+</label>
+<br>
+<label>
+Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="rounded" type="text" name="email" value = "{{email}}"><div id="error">{{eerror}}</div>
+</label>
+<br>
+<input type="submit" name="submit" value = "sign me up!">
+</form>
+</div>
+{% endblock %}

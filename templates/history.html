@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{title}}
+{% for p in posts %}
+<div id ="page-wrap">
+	<label>
+		<br>
+		<div id = "main">{{p.content}}</div>
+
+	</label>
+</div>
+{% endfor %}
+{% endblock %}
