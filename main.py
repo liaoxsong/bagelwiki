@@ -102,7 +102,7 @@ class User(db.Model):
 
 class Post(db.Model):
 	title = db.StringProperty(required=True)
-	content = db.StringProperty(required=True)
+	content = db.StringProperty(required=True,multiline=True)
 	created = db.DateProperty(auto_now_add = True)
 	last_modified = db.DateTimeProperty(auto_now = True)
 	
@@ -121,16 +121,21 @@ def getuser(cookie):
 
 class EditPage(Handler):
         def get(self,url_title):
-		user = getuser(self.request.cookies.get("user_id"))
+            user = getuser(self.request.cookies.get("user_id"))
+            if not user:
+                #self.write("bla")
+                self.render('signup.html',message="Please sign up to start editing")
+            else:
                 title = url_title.split('/')[1]
                 if not title:
-                    title="default"
+                    title = "default"
                 p = Post.all().filter("title =",title).order('-last_modified').get()
                 if p:
                     content =p.content
                 else:
                     content=""
                 self.render("edit.html",title = title,user=user,content=content)
+
 
         def post(self,url_title):
                 title = url_title.split('/')[1]
