@@ -123,8 +123,10 @@ class EditPage(Handler):
         def get(self,url_title):
             user = getuser(self.request.cookies.get("user_id"))
             if not user:
+                self.redirect('/login')
                 #self.write("bla")
-                self.render('signup.html',message="Please sign up to start editing")
+                #self.render('login.html',message="Please sign up to start editing")
+
             else:
                 title = url_title.split('/')[1]
                 if not title:
