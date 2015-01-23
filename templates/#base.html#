@@ -650,7 +650,7 @@ $("#cssmenu").menumaker({
 
       <footer class="site-footer">
           <span>
-           Xi Zhang (Evan) 2014
+          &copy; 2014 <a href='http://songliao.co' target="_blank">Song Liao</a> for Udacity CS253
          .</span>
         </div>
       </footer>
